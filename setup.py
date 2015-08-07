@@ -8,18 +8,21 @@ setup(
     version='1.0',
     author='Sviatoslav Abakumov',
     author_email='dust.harvesting@gmail.com',
-    description='Modify environment in fish shell with variables from script '
-                'output, e.g. ssh-add.',
+    description='Title case english words except for function words.',
     long_description=README,
     url='https://github.com/Perlence/advanced-titlecase',
     download_url='https://github.com/Perlence/advanced-titlecase/archive/master.zip',
-    py_modules=['advancedtitlecase'],
+    py_modules=['advanced_titlecase'],
     zip_safe=False,
     entry_points={
         'console_scripts': [
-            'atc = advancedtitlecase:main',
+            'atc = advanced_titlecase:main',
         ],
     },
+    tests_require=[
+        'nose',
+    ],
+    test_suite='nose.collector',
     classifiers=[
         'Development Status :: 3 - Stable',
         'Environment :: Console',

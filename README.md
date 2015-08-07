@@ -1,6 +1,6 @@
 # advanced-titlecase
 
-Title case english words except for conjunctions and articles.
+Title case english words except for function words.
 
 ## Installation
 
