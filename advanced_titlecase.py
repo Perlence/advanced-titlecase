@@ -10,7 +10,7 @@ for and nor but or yet so
 to on of in from with at by vs as over
 
 pour et ni ou mais pourtant si
-à sur d'en partir avec au par vs
+sur d'en partir avec au par vs
 
 el las la
 para y pero sin embargo tan
@@ -26,6 +26,8 @@ ROMAN_PATTERN = re.compile(ur"^M{0,4}"
                            ur"(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$",
                            re.IGNORECASE | re.UNICODE)
 PATTERN = re.compile(ur"\w+('\w+)?", re.UNICODE)
+ENDS_WITH_PUNCTUATION = re.compile(ur"[\]\)\-~/:.]$", re.UNICODE)
+STARTS_WITH_PUNCTUATION = re.compile(ur"^[\[\(\-~/]", re.UNICODE)
 
 
 def main():
@@ -39,15 +41,22 @@ def advanced_titlecase(string):
     """Titlecase all words and lowercase selected function words."""
     string = titlecase(string)
     words = string.split()
-    contexts = zip([None] + words, words + [None])
+    contexts = zip([None, None] + words,
+                   [None] + words + [None],
+                   words + [None, None])
     result = []
-    for left, word in contexts:
+    for left, word, right in contexts:
         if word is None:
             continue
         lower = word.lower()
-        if (left is not None and
+        stripped = lower.strip('.')
+        if ((left is not None and
+                right is not None and
                 lower in FUNCTION_WORDS and
-                re.search(ur"[\]\)\-:.]$", left) is None):
+                ENDS_WITH_PUNCTUATION.search(left) is None and
+                STARTS_WITH_PUNCTUATION.search(right) is None) or
+                (stripped in FUNCTION_WORDS and
+                 (lower.startswith('..') or lower.endswith('..')))):
             result.append(lower)
         else:
             result.append(word)
@@ -64,8 +73,15 @@ def titlecase(string):
         roman_mo = ROMAN_PATTERN.match(mo.group())
         if roman_mo:
             return mo.group().upper()
-        else:
-            return (mo.group(0)[0].upper() + mo.group(0)[1:].lower())
+
+        word = mo.group(0)
+        tail = word[1:]
+        tail_lower = tail.lower()
+        # If the tail of the word is uppercase then leave it as is.
+        if tail_lower != tail:
+            return word
+
+        return (word[0].upper() + tail_lower)
     return PATTERN.sub(f, string)
 
 if __name__ == '__main__':

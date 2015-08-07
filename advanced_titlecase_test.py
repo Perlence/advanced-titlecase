@@ -16,7 +16,7 @@ advanced_titlecase_tests = [
     ('of hello world', 'Of Hello World'),
     ('hello (of the world)', 'Hello (Of the World)'),
     ('hello (the world of)', 'Hello (The World Of)'),
-    ('hello of the (the world)', 'Hello of the (The World)'),
+    ('hello of the (the world)', 'Hello of The (The World)'),
     ('hello the world iii', 'Hello the World III'),
     ('the end complete iv: the road and the damned',
      'The End Complete IV: The Road and the Damned'),
@@ -24,6 +24,17 @@ advanced_titlecase_tests = [
     ('hello - the world', 'Hello - The World'),
     ('hello of. the world', 'Hello Of. The World'),
     ('hello the.', 'Hello The.'),
+    ('in memory of...', 'In Memory of...'),
+    ('...and the great cold death of the earth',
+     '...and the Great Cold Death of the Earth'),
+    ('we, the gods', 'We, the Gods'),
+    ('aSHES DIVIDE', 'aSHES DIVIDE'),
+    ('our fortress is burning... iii - the grain',
+     'Our Fortress Is Burning... III - The Grain'),
+    ('cold fortress / of stars', 'Cold Fortress / Of Stars'),
+    ('breeze ~ in monochrome night', 'Breeze ~ In Monochrome Night'),
+    ('mine is yours to drown in (ours is the new tribe)',
+     'Mine Is Yours to Drown In (Ours Is the New Tribe)'),
 ]
 
 
