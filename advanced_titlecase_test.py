@@ -24,7 +24,6 @@ advanced_titlecase_tests = [
     ('hello - the world', 'Hello - The World'),
     ('hello of. the world', 'Hello Of. The World'),
     ('hello the.', 'Hello The.'),
-    ('in memory of...', 'In Memory of...'),
 ]
 
 

@@ -26,9 +26,6 @@ ROMAN_PATTERN = re.compile(ur"^M{0,4}"
                            ur"(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$",
                            re.IGNORECASE | re.UNICODE)
 PATTERN = re.compile(ur"\w+('\w+)?", re.UNICODE)
-FW_PATTERN = re.compile(ur"[^\]\):.\-]\s+({})[^.]"
-                        .format(u"|".join(FUNCTION_WORDS)),
-                        re.IGNORECASE | re.UNICODE)
 
 
 def main():
@@ -41,10 +38,20 @@ def main():
 def advanced_titlecase(string):
     """Titlecase all words and lowercase selected function words."""
     string = titlecase(string)
-
-    string = FW_PATTERN.sub(lambda mo: mo.group(0).lower(),
-                            string.decode('utf-8'))
-    return string
+    words = string.split()
+    contexts = zip([None] + words, words + [None])
+    result = []
+    for left, word in contexts:
+        if word is None:
+            continue
+        lower = word.lower()
+        if (left is not None and
+                lower in FUNCTION_WORDS and
+                re.search(ur"[\]\)\-:.]$", left) is None):
+            result.append(lower)
+        else:
+            result.append(word)
+    return ' '.join(result)
 
 
 def titlecase(string):
