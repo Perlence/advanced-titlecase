@@ -1,6 +1,6 @@
 # advanced-titlecase
 
-Title case english words except for function words.
+Title case English words except for function words.
 
 ## Installation
 
@@ -19,3 +19,5 @@ Title case english words except for function words.
 ## Usage
 
 advanced-titlecase reads lines from stdin, applies casing and prints the results to stdout.
+
+The program is not bulletproof and is insensitive to edge cases. Please, check the output manually and refer to https://musicbrainz.org/doc/Style/Language/English.
