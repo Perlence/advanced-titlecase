@@ -35,6 +35,10 @@ advanced_titlecase_tests = [
     ('breeze ~ in monochrome night', 'Breeze ~ In Monochrome Night'),
     ('mine is yours to drown in (ours is the new tribe)',
      'Mine Is Yours to Drown In (Ours Is the New Tribe)'),
+    ('plan! the panama? of course', 'Plan! The Panama? Of Course'),
+    ('she said, "of course"', 'She Said, "Of Course"'),
+    ('the end of "hello world"', 'The End of "Hello World"'),
+    ('ultra-bombastic', 'Ultra-Bombastic'),
 ]
 
 

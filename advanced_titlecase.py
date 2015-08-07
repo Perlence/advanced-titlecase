@@ -8,6 +8,7 @@ FUNCTION_WORDS = u"""
 the a an
 for and nor but or yet so
 to on of in from with at by vs as over
+cum mid off per qua re up via
 
 pour et ni ou mais pourtant si
 sur d'en partir avec au par vs
@@ -26,7 +27,7 @@ ROMAN_PATTERN = re.compile(ur"^M{0,4}"
                            ur"(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$",
                            re.IGNORECASE | re.UNICODE)
 PATTERN = re.compile(ur"\w+('\w+)?", re.UNICODE)
-ENDS_WITH_PUNCTUATION = re.compile(ur"[\]\)\-~/:.]$", re.UNICODE)
+ENDS_WITH_PUNCTUATION = re.compile(ur"[\]\)\-~/:.?!]$", re.UNICODE)
 STARTS_WITH_PUNCTUATION = re.compile(ur"^[\[\(\-~/]", re.UNICODE)
 
 
