@@ -8,7 +8,7 @@ setup(
     version='1.0',
     author='Sviatoslav Abakumov',
     author_email='dust.harvesting@gmail.com',
-    description='Title case english words except for function words.',
+    description='Capitalize English titles.',
     long_description=README,
     url='https://github.com/Perlence/advanced-titlecase',
     download_url='https://github.com/Perlence/advanced-titlecase/archive/master.zip',

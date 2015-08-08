@@ -1,6 +1,6 @@
 # advanced-titlecase
 
-Titlecase English words except for function words.
+Capitalize English titles.
 
 ## Installation
 

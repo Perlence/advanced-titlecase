@@ -39,7 +39,7 @@ def main():
 
 
 def advanced_titlecase(string):
-    """Titlecase all words and lowercase selected function words."""
+    """Capitalize English titles."""
     string = titlecase(string)
     words = string.split()
     contexts = zip([None, None] + words,
