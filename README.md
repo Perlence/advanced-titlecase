@@ -1,6 +1,6 @@
 # advanced-titlecase
 
-Title case English words except for function words.
+Titlecase English words except for function words.
 
 ## Installation
 
