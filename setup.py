@@ -11,7 +11,6 @@ setup(
     description='Capitalize English titles.',
     long_description=README,
     url='https://github.com/Perlence/advanced-titlecase',
-    download_url='https://github.com/Perlence/advanced-titlecase/archive/master.zip',
     py_modules=['advanced_titlecase'],
     zip_safe=False,
     entry_points={
@@ -20,9 +19,8 @@ setup(
         ],
     },
     tests_require=[
-        'nose',
+        'pytest',
     ],
-    test_suite='nose.collector',
     classifiers=[
         'Development Status :: 3 - Stable',
         'Environment :: Console',
@@ -31,7 +29,7 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Operating System :: MacOS :: MacOS X',
         'Operating System :: POSIX :: Linux',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
         'Programming Language :: Python',
         'Topic :: System :: Shells',
     ]

@@ -1,10 +1,7 @@
-# -*- encoding: UTF-8 -*-
-from __future__ import print_function
-
 import re
 import sys
 
-FUNCTION_WORDS = u"""
+FUNCTION_WORDS = set("""
 the a an
 for and nor but or yet so
 to on of in from with at by vs as over
@@ -20,15 +17,15 @@ desde con al por
 die eine ein
 für und noch oder aber doch so
 auf der in aus mit von
-""".split()
+""".split())
 
-ROMAN_PATTERN = re.compile(ur"^M{0,4}"
-                           ur"(CM|CD|D?C{0,3})"
-                           ur"(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$",
-                           re.IGNORECASE | re.UNICODE)
-PATTERN = re.compile(ur"\w+('\w+)?", re.UNICODE)
-ENDS_WITH_PUNCTUATION = re.compile(ur"[\]\)\-~/:.?!]$", re.UNICODE)
-STARTS_WITH_PUNCTUATION = re.compile(ur"^[\[\(\-~/]", re.UNICODE)
+ROMAN_PATTERN = re.compile(r"^M{0,4}"
+                           r"(CM|CD|D?C{0,3})"
+                           r"(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$",
+                           re.IGNORECASE)
+PATTERN = re.compile(r"\w+('\w+)?")
+ENDS_WITH_PUNCTUATION = re.compile(r"[\]\)\-~/:.?!]$")
+STARTS_WITH_PUNCTUATION = re.compile(r"^[\[\(\-~/]")
 
 
 def main():
@@ -84,6 +81,7 @@ def titlecase(string):
 
         return (word[0].upper() + tail_lower)
     return PATTERN.sub(f, string)
+
 
 if __name__ == '__main__':
     main()
