@@ -2,10 +2,11 @@ import re
 import sys
 
 FUNCTION_WORDS = set("""
-the a an
-for and nor but or yet so
-to on of in from with at by vs as over
+a an the
+and but or nor
+as at by for in of on to but
 cum mid off per qua re up via
+to
 """.split())
 
 ROMAN_PATTERN = re.compile(r"^M{0,4}"
