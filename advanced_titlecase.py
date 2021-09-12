@@ -6,17 +6,6 @@ the a an
 for and nor but or yet so
 to on of in from with at by vs as over
 cum mid off per qua re up via
-
-pour et ni ou mais pourtant si
-sur d'en partir avec au par vs
-
-el las la
-para y pero sin embargo tan
-desde con al por
-
-die eine ein
-für und noch oder aber doch so
-auf der in aus mit von
 """.split())
 
 ROMAN_PATTERN = re.compile(r"^M{0,4}"
